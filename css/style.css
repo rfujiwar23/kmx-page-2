@@ -1,0 +1,108 @@
+/* 2023.4.3追加 */
+
+.page-text-area {
+    margin:0 auto;
+}
+
+.page-text-area h2 {
+    font-size: 1.5em;
+    padding:1vh 10px;
+}
+
+.page-text-area .text-area {
+    margin:0 auto;
+    padding:4vh 20px;
+}
+
+.seminar-block {
+    
+    margin:0 auto;
+    padding:3vh 20px;
+    font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+}
+
+.seminar-block .seminar_list {
+    margin:20px auto;
+    width:90%;
+    max-width:640px;
+}
+
+.seminar-block .seminar_list .seminar_type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:60px;
+    color:#fff;
+    font-size: 14px;
+}
+
+.seminar-block .seminar_list .seminar_information {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+.course-block {
+    padding:4vh 20px;
+}
+
+.course_list {
+    width:100%;
+    max-width: 640px;
+    margin:10px auto;
+}
+
+.course_type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    height:60px;
+}
+
+.course_information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+@media screen and (max-width:576px) {
+    .main-contents-area {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .seminar-block .seminar_list {
+        margin:20px auto;
+        width:100%;
+        max-width:360px;
+    }
+    
+    .seminar-block .seminar_list .seminar_type {
+        height:40px;
+    }
+
+    .seminar-block .seminar_list .seminar_information {
+        padding:10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .main-contents-area {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width:414px) {
+    .page-text-area h2 {
+        font-size: 1.25em;
+    }
+
+    .page-text-area .text-area {
+        font-size: 0.8em;
+    }
+}

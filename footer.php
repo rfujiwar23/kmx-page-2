@@ -1,5 +1,5 @@
   <footer>
-    KAMISMAX 2022
+    KAMISMAX 2023
   </footer>
 
   <style>

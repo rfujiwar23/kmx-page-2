@@ -9,7 +9,7 @@ body {
 }
 .link-to-videos p {
   font-size: 0.9em;
-  color: #9b0303;
+  color: #ffffff;
 }
 .link-to-videos p::before {
   content: "*";
@@ -128,23 +128,51 @@ footer {
   display: block;
 }
 
-.perm {
-  border: 5px solid #199cb0;
-  background: #199cb0;
+.seminar.perm {
+  /* border: 5px solid #199cb0; */
+  background: #a7b33f;
 }
 
-.cut {
+.seminar.digital-perm {
+  background:#36938f;
+}
+
+.seminar.straight {
+  background:#439849;
+}
+
+.seminar.arrange {
+  background:#597094;
+}
+
+.seminar.hairmake {
+  background:#597094;
+}
+
+.seminar.branding {
+  background:#597094;
+}
+/* .cut {
   border: 5px solid #b7b79d;
   background: #b7b79d;
+} */
+
+.seminar.cut {
+  /* border: 5px solid #f491ff; */
+  background: #d14839;
 }
 
-.color {
-  border: 5px solid #f491ff;
-  background: #f491ff;
+.seminar.color {
+  /* border: 5px solid #f491ff; */
+  background: #e6b640;
 }
 
 .seminar {
   margin: 2vh auto;
+  width:100%;
+  max-width: 800px;
+  border:2px solid #fff;
+  box-shadow: 3px 3px rgba(50,59,50,26%);
 }
 .seminar .seminar-top {
   display: flex;
@@ -182,10 +210,25 @@ footer {
   color: #fff;
   padding: 10px 20px;
 }
+
+.seminar .seminar-top .title-area .number {
+  background:#000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:0 20px;
+}
+
+.seminar .seminar-top .title-area .number span em {
+  font-style: normal;
+  padding:0 5px;
+}
 .seminar .seminar-top .instructor .title {
   font-weight: bold;
   width: 20%;
 }
+
 .seminar .seminar-top .instructor .instructor-list {
   width: 80%;
   padding: 10px;
@@ -204,9 +247,8 @@ footer {
   font-size: 0.9em;
 }
 .seminar .seminar-contents {
-  margin-top: 1vh;
   padding: 2vh 0 1vh;
-  background: #fff;
+  border-top: #fff 2px solid;
 }
 .seminar .seminar-contents .number {
   text-align: right;
@@ -219,10 +261,14 @@ footer {
 .seminar .seminar-contents .number span em {
   font-style: normal;
 }
+
+.seminar .seminar-contents .seminar-details {
+  color: #fff;
+}
 .seminar .seminar-contents .seminar-details .brief-details {
   padding: 10px 20px;
   margin-bottom: 2vh;
-  border-bottom: 1px solid #9a9a9a;
+  border-bottom: 1px solid #ffffff;
   font-weight: bold;
 }
 .seminar .seminar-contents .seminar-details .details .detail-top {
@@ -236,17 +282,18 @@ footer {
   margin-right: 10px;
 }
 .seminar .seminar-contents .seminar-details .details .detail-top .left {
-  background: #9a9a9a;
-  border: 1px solid #373333;
+  /* background: #9a9a9a; */
+  border: 1px solid #fff;
   padding: 5px 10px;
 }
 .seminar .seminar-contents .seminar-details .details .detail-top .left h4 {
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 0.9em;
 }
 .seminar .seminar-contents .seminar-details .details .detail-top .right {
   padding: 5px;
-  border: 1px solid #000;
+  border: 1px solid #fff;
+  font-size: 0.9em;
 }
 .seminar .seminar-contents .seminar-details .details .detail-top .right p {
   margin-bottom: 0;
@@ -254,8 +301,8 @@ footer {
 }
 .seminar .seminar-contents .seminar-details .details .seminar-points {
   margin-top: 10px;
-  padding: 10px;
-  border: 1px dashed #9a9a9a;
+  /* padding: 10px; */
+  border-bottom: 1px dashed #ffffff;
 }
 .seminar .seminar-contents .seminar-details .details .seminar-points ul {
   margin-top: 10px;
@@ -263,13 +310,13 @@ footer {
   padding: 0;
 }
 .seminar .seminar-contents .seminar-details .details .seminar-points ul li {
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 .seminar .seminar-contents .seminar-details .details .seminar-points ul li::before {
   margin-right: 3px;
   content: "◉";
   font-weight: bold;
-  color: #3d2727;
+  color: #fff;
   font-size: 0.7em;
 }
 .seminar .seminar-contents .seminar-details .stylists {
@@ -284,26 +331,28 @@ footer {
 }
 .seminar .seminar-contents .seminar-details .message-from-instructor {
   padding: 10px;
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
 }
-.seminar .seminar-contents .seminar-details .message-from-instructor .heading-text {
+/* .seminar .seminar-contents .seminar-details .message-from-instructor .heading-text {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 .seminar .seminar-contents .seminar-details .message-from-instructor .heading-text span {
-  background: #9a9a9a;
-  padding: 5px 10px;
+  /* background: #9a9a9a; */
+  /* padding: 5px 10px; */
   font-size: 16px;
   color: #fff;
+  text-decoration: underline;
 }
 .seminar .seminar-contents .seminar-details .message-from-instructor .message {
   flex: 3;
   display: flex;
   align-items: center;
   padding: 5px;
+  font-size: 0.8em;
 }
 
 .wrapper {
@@ -660,7 +709,17 @@ footer {
 }
 .list_table > dd > .row .column {
   width: calc(100% / 5);
+  /* 2023.4.3追加 */
+  font-size: 0.8em;
 }
+
+/* 2023.4.3追加 */
+.list_table > dd > .row .column .btn {
+  font-size: 0.9em;
+}
+/* 2023.4.3追加 */
+
+
 .list_table > dd > .row .type {
   font-weight: bold;
 }
@@ -671,6 +730,19 @@ footer {
 .list_table > dd > ul {
   text-align: left;
 }
+
+/* 2023.4.3追加 */
+.list_table > dd > .course-details {
+  font-size: 0.8em;
+  text-align: left;
+  padding-top:10px;
+}
+
+.hide {
+  display: none;
+}
+/* 2023.4.3追加 */
+
 
 .courses {
   border: 1px solid #9a9a9a;
@@ -701,6 +773,12 @@ footer {
   line-height: 60px;
   cursor: pointer;
 }
+
+
+
+
+
+
 .course-table ul.nav > li.on {
   background-color: #fc8e56;
   font-weight: bold;
@@ -791,7 +869,8 @@ footer {
     flex-direction: column;
   }
   .seminar .seminar-top .column {
-    margin-bottom: 1vh;
+    /* margin-bottom: 1vh; */
+    font-size: 0.8em;
   }
   .seminar .seminar-contents .message-from-instructor .heading-text {
     flex: 1;
@@ -928,7 +1007,7 @@ footer {
   }
   .seminar .seminar-contents .seminar-details .message-from-instructor .message {
     flex: 2;
-    border: 1px dashed #9a9a9a;
+    /* border: 1px dashed #9a9a9a; */
     margin-top: 2vh;
     padding: 20px;
   }
@@ -972,6 +1051,21 @@ footer {
   }
 }
 @media screen and (max-width: 500px) {
+  
+  /* 2023.4.3追加 */
+  .hide {
+    display:inline-block;
+  }
+
+  .hide strong {
+    margin:0 5px 0 0;
+  }
+
+  /* 2023.4.3追加 */
+  .hide-on-phone {
+    display:none;
+  }
+  
   .guidelines .course-guidelines h3 {
     font-size: 1.5em;
   }

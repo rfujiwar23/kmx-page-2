@@ -1,3 +1,23 @@
+
+<div class="main-contents-area">
+  <?php if (have_rows('main_contents')) : ?>
+
+    <?php while (have_rows('main_contents')) : the_row(); ?>
+
+      <!-- 内部リンク -->
+      <?php if (get_row_layout() == 'page_top_image') : ?>
+        <div>
+          <pre><?php get_sub_field('image_banner');?></pre>
+        </div>
+      <?php endif; ?>
+
+
+    <?php endwhile; ?>
+
+  <?php endif; ?>
+</div>
+
+
 <?php 
   global $title;
   $page = get_post(get_page_by_path('course'));
@@ -13,13 +33,84 @@
   echo $page -> post_content;
   ?>
 
+<!-- 2023.3.31 追加 -->
+<?php $the_query = new WP_Query(array("post_type"=>"page","p"=>8));
+  while($the_query->have_posts()):$the_query->the_post();
+?>
+<div class="main-contents-area container px-0">
+  <?php if (have_rows('main_contents')) : ?>
+    <?php while (have_rows('main_contents')) : the_row(); ?>
+      <?php if (get_row_layout() == 'page_top_image') : ?>
+        <div class="image-banner" style="aspect-ratio: 16/9; background: url(<?php echo get_sub_field('image_banner');?>) no-repeat; background-size:cover; background-position:center;">
+        </div>
+      <?php endif; ?>
+      <?php if (get_row_layout() == 'page_text_area') : ?>
+        <div class="page-text-area">
+        <h2 class="text-center mb-0" style="color: <?php echo get_sub_field('section_header_color');?>; background:<?php echo get_sub_field('section_header_background_color');?> "><?php echo get_sub_field('section_header');?></h2>
+        <div class="text-area" style="background:#fff; background:linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url(<?php echo get_sub_field('text_area_background')?>) no-repeat; background-position:center; background-size:cover;  ">
+          <?php echo get_sub_field('text_area');?>
+        </div>
+        </div>
+      <?php endif; ?>
+      <?php if (get_row_layout() == 'seminar-block') : ?>
+        <div class="seminar-block" style="background:#fff;">
+        
+        <?php if( have_rows('seminar_list') ): ?>
+    
+            <?php while( have_rows('seminar_list') ): the_row(); ?>
+                <div class="row seminar_list">
+                  <div class="col-lg-4 col-md-4 col-sm-4 seminar_type" style="background:<?php echo get_sub_field('background_color') ?>;">
+                  <?php echo get_sub_field('seminar_type') ?>
+                  </div>
+                  <div class="col-lg-8 col-md-8 col-sm-8 seminar_information" style="border: 2px solid <?php echo get_sub_field('background_color') ?>;">
+                  <?php echo get_sub_field('seminar_information') ?>
+                  <!--  -->
+                  </div>
+                </div>
+            <?php endwhile; ?>
+            
+        <?php endif; ?>
+        </div>
+      <?php endif; ?>
+      <?php if (get_row_layout() == 'course-block') : ?>
+        <div class="course-block" style="background:#fff;">
+        
+        <?php if( have_rows('course_list') ): ?>
+    
+            <?php while( have_rows('course_list') ): the_row(); ?>
+                <div class="row course_list">
+                  <div class="col-lg-3 col-md-3 col-sm-4 course_type" style="background:<?php echo get_sub_field('background_color') ?>;">
+                  <?php echo get_sub_field('course_type') ?>
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-sm-8 course_information" style="border: 2px solid <?php echo get_sub_field('background_color') ?>;">
+                  <?php echo get_sub_field('course_information') ?>
+                  <!--  -->
+                  </div>
+                </div>
+            <?php endwhile; ?>
+            
+        <?php endif; ?>
+        </div>
+      <?php endif; ?>
+    <?php endwhile; ?>
+  <?php endif; ?>
+</div>
+<?php endwhile; wp_reset_postdata();?>
+<!-- 2023.3.31 追加 -->
+
 <div class="container-fluid pb-5" id="list">
   <div class="clist py-4">
     <div class="course-table">
       <ul class="nav">
-        <li>ベーシック</li>
-        <li>スタンダード</li>
-        <li>ハイレベル</li>
+        <li>
+          ベーシック
+        </li>
+        <li>
+          スタンダード
+        </li>
+        <li>
+          ハイレベル
+        </li>
       </ul>
       <ul class="snav s1">
         <li data-name="カット">CUT</li>
@@ -121,9 +212,11 @@
               <?php endif; ?>
               <div class="row">
                 <div class="column type"><?php echo get_field('course_kinds', $post->ID); ?></div>
-                <div class="column"><?php echo get_field('course_salon', $post->ID); ?></div>
-                <div class="column"><?php echo get_field('course_stylist', $post->ID); ?></div>
-                <div class="column"><?php echo get_field('course_id', $post->ID); ?></div>
+                <div class="column">
+                  <span class="hide"><strong>スタイリスト：</strong></span><?php echo get_field('course_salon', $post->ID); ?> <span class="hide"><?php echo get_field('course_stylist', $post->ID); ?></span>
+                </div>
+                <div class="column hide-on-phone"><?php echo get_field('course_stylist', $post->ID); ?></div>
+                <div class="column"><span class="hide"><strong>講座ID： </strong></span><?php echo get_field('course_id', $post->ID); ?></div>
                 <div class="column">
                   <button type="button" class="btn btn-primary video-btn" data-bs-toggle="modal"
                     data-src="<?php echo get_field('course_sample_url', $post->ID); ?>" data-url="<?php echo get_field('course_mov_url', $post->ID); ?>" data-bs-target="#stylistModal">
@@ -152,6 +245,10 @@
                 </div>
 */ ?>
               </div>
+              <!-- 2023.4.3追加 コース内容 -->
+              <div class="course-details">
+              <strong>内容</strong>： <?php echo get_field('course_description', $post->ID); ?>
+              </div>
               <?php $prev_hairstyle = $hairstyle->name; endif; endwhile; ?> 
 
             </dd>
@@ -168,6 +265,7 @@
 
   </div>
 </div>
+
 </div>
 
 <?php
