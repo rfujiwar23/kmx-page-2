@@ -19,78 +19,12 @@ $post_type = get_post_type();
 <?php $the_query = new WP_Query(array("post_type"=>"page","p"=>10));
   while($the_query->have_posts()):$the_query->the_post();
 ?>
-<div class="main-contents-area container px-0">
-  <?php if (have_rows('main_contents')) : ?>
-    <?php while (have_rows('main_contents')) : the_row(); ?>
-      <?php if (get_row_layout() == 'page_top_image') : ?>
-        <div class="image-banner" style="aspect-ratio: 16/9; background: url(<?php echo get_sub_field('image_banner');?>) no-repeat; background-size:cover; background-position:center;">
-        </div>
-      <?php endif; ?>
-      <?php if (get_row_layout() == 'page_text_area') : ?>
-        <div class="page-text-area">
-        <h2 class="text-center mb-0" style="color: <?php echo get_sub_field('section_header_color');?>; background:<?php echo get_sub_field('section_header_background_color');?> "><?php echo get_sub_field('section_header');?></h2>
-        <!-- <div class="text-area" style="background:#fff; background:linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.6)), url(<?php echo get_sub_field('text_area_background')?>) no-repeat; background-position:center; background-size:cover;  ">
-          <?php echo get_sub_field('text_area');?>
-        </div> -->
-        <?php if (get_sub_field('text_area_background')) : ?>
-          <div class="text-area" style="background:linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.6)), url(<?php echo get_sub_field('text_area_background')?>) no-repeat; background-position:center; background-size:cover;  ">
-            <?php echo get_sub_field('text_area');?>
-          </div>
-          <?php else: ?>
-          <div class="text-area" style="background:#fff;">
-            <?php echo get_sub_field('text_area');?>
-          </div>
-        <?php endif; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (get_row_layout() == 'seminar-block') : ?>
-        <div class="seminar-block" style="background:#fff;">
-        
-        <?php if( have_rows('seminar_list') ): ?>
-    
-            <?php while( have_rows('seminar_list') ): the_row(); ?>
-                <div class="row seminar_list">
-                  <div class="col-lg-4 col-md-4 col-sm-4 seminar_type" style="background:<?php echo get_sub_field('background_color') ?>;">
-                  <?php echo get_sub_field('seminar_type') ?>
-                  </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 seminar_information" style="border: 2px solid <?php echo get_sub_field('background_color') ?>;">
-                  <?php echo get_sub_field('seminar_information') ?>
-                  <!--  -->
-                  </div>
-                </div>
-            <?php endwhile; ?>
-            
-        <?php endif; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (get_row_layout() == 'course-block') : ?>
-        <div class="course-block" style="background:#fff;">
-        
-        <?php if( have_rows('course_list') ): ?>
-    
-            <?php while( have_rows('course_list') ): the_row(); ?>
-                <div class="row course_list">
-                  <div class="col-lg-4 col-md-4 col-sm-4 course_type" style="background:<?php echo get_sub_field('background_color') ?>;">
-                  <?php echo get_sub_field('course_type') ?>
-                  </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 seminar_information" style="border: 2px solid <?php echo get_sub_field('background_color') ?>;">
-                  <?php echo get_sub_field('course_information') ?>
-                  <!--  -->
-                  </div>
-                </div>
-            <?php endwhile; ?>
-            
-        <?php endif; ?>
-        </div>
-      <?php endif; ?>
-    <?php endwhile; ?>
-  <?php endif; ?>
-</div>
+<?php get_template_part('template-parts/contents'); ?>
 <?php endwhile; wp_reset_postdata();?>
 <!-- 2023.3.31 追加 -->
 
 
-  <div class="container">
+  <div class="container" style="background:#fff;">
     <div class="contents">
 
       <div class="modal fade" id="stylistModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

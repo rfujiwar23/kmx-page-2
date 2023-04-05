@@ -677,7 +677,7 @@ footer {
 
 .list_table > dt,
 .list_table > dd {
-  padding: 1em;
+  padding: 5px 1em 10px;
   margin: 0px;
 }
 
@@ -685,13 +685,13 @@ footer {
   margin-bottom: 5px;
 }
 .list_table > dt {
-  background-color: #3b638b;
+  background-color: #6a7687;;
   color: #fff;
   width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #0e355c;
+  /* border: 1px solid #0e355c; */
 }
 .list_table > dd {
   background-color: #fff;
@@ -702,7 +702,8 @@ footer {
   display: flex;
   flex-direction: row;
   padding: 10px;
-  border-bottom: 1px dashed #9a9a9a;
+  /* border-bottom: 1px dashed #9a9a9a; */
+  /* background: #dfdfdf; */
 }
 .list_table > dd > .row:nth-child(1) {
   border-bottom: none;
@@ -724,7 +725,7 @@ footer {
   font-weight: bold;
 }
 .list_table > dd > .row .table-header {
-  background: #3b638b;
+  background: #252e37;
   color: #fff;
 }
 .list_table > dd > ul {
@@ -736,6 +737,9 @@ footer {
   font-size: 0.8em;
   text-align: left;
   padding-top:10px;
+  padding-bottom:10px;
+  border-bottom:1px solid #9a9a9a;
+  height:80px;
 }
 
 .hide {
@@ -763,15 +767,19 @@ footer {
   width: 100%;
   height: 60px;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 .course-table ul.nav > li {
   float: left;
-  width: calc(100% / 3);
+  width: 33%;
   height: 60px;
   background-color: white;
   text-align: center;
   line-height: 60px;
   cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgba(50,50,50,0.5);
 }
 
 
@@ -780,8 +788,9 @@ footer {
 
 
 .course-table ul.nav > li.on {
-  background-color: #fc8e56;
+  /* background-color: #fc8e56; */
   font-weight: bold;
+  background: linear-gradient(180deg, rgba(235,127,22,1) 0%, rgba(255,199,0,0.6) 100%);
 }
 .course-table ul.snav {
   display: none;
@@ -789,23 +798,29 @@ footer {
   width: 100%;
   padding: 0;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
+  justify-content: space-between;
 }
 .course-table ul.snav > li {
   display: inline-block;
-  width: 20%;
-  height: 60px;
+  width: 18%;
+  height: 40px;
   background-color: #f4f4f4;
-  border: 1px dashed #323232;
+  /* border: 1px dashed #323232; */
   text-align: center;
-  line-height: 60px;
+  line-height: 40px;
   font-size: small;
   cursor: pointer;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.66);
 }
 .course-table ul.snav > li:nth-child(2n) {
   background-color: #f4f4f4;
-  border: 1px dashed #323232;
+  /* border: 1px dashed #323232; */
   border-bottom: none;
 }
 .course-table ul.snav > li:nth-child(odd) {
@@ -961,6 +976,7 @@ footer {
     flex-direction: row;
     padding: 10px;
     border-bottom: 1px dashed #9a9a9a;
+    position:relative;
   }
   .list_table > dd > .row:nth-child(1) {
     border-top: 1px dashed #9a9a9a;
@@ -982,8 +998,9 @@ footer {
     flex-direction: column;
   }
   .course-table ul.snav > li {
-    display: inline-block;
-    width: 100%;
+    display: block;
+    width: 60%;
+    margin:4px auto;
   }
 }
 @media screen and (max-width: 576px) {
@@ -1008,7 +1025,7 @@ footer {
   .seminar .seminar-contents .seminar-details .message-from-instructor .message {
     flex: 2;
     /* border: 1px dashed #9a9a9a; */
-    margin-top: 2vh;
+    /* margin-top: 2vh; */
     padding: 20px;
   }
 
@@ -1065,6 +1082,24 @@ footer {
   .hide-on-phone {
     display:none;
   }
+
+  .list_table > dd {
+    text-align: left;
+  }
+
+  .list_table > dd > .row .video-button {
+    position:absolute;
+    bottom:16%;
+}
+
+
+/* 2023.4.4 */
+.list_table > dd > .row .column .btn {
+  /* bottom: 0; */
+  font-size: 0.9em;
+  position: absolute;
+  right: 8%;
+}
   
   .guidelines .course-guidelines h3 {
     font-size: 1.5em;
@@ -1084,10 +1119,10 @@ footer {
     color: #fff;
   }
   .seminar .seminar-contents .seminar-details .details .detail-top {
-    flex-direction: column;
+    flex-direction: row;
   }
   .seminar .seminar-contents .seminar-details .details .detail-top .column {
-    margin-right: 0;
+    margin-right: 10px;
   }
   .seminar .seminar-contents .seminar-details .details .detail-top .right p {
     font-size: 0.9em;
@@ -1110,9 +1145,9 @@ footer {
   }
   .list_table > dd > .row .type {
     text-decoration: underline;
-    background: #0e355c;
-    padding: 10px;
-    color: #fff;
+    /* background: #0e355c; */
+    /* padding: 10px; */
+    color: #000;
   }
 
   .top-page-main .top-details .text h3 {

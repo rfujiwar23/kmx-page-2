@@ -1,5 +1,17 @@
 /* 2023.4.3追加 */
 
+.image-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+}
+
+.image-banner h2 span {
+    color:#fff;
+    padding:5px 20px;
+    background:rgba(50,50,50,0.44);
+}
 .page-text-area {
     margin:0 auto;
 }
@@ -11,7 +23,7 @@
 
 .page-text-area .text-area {
     margin:0 auto;
-    padding:4vh 20px;
+    padding:4vh 20px 2vh;
 }
 
 .seminar-block {
@@ -50,8 +62,8 @@
 
 .course_list {
     width:100%;
-    max-width: 640px;
-    margin:10px auto;
+    max-width: 720px;
+    margin:20px auto;
 }
 
 .course_type {
@@ -68,6 +80,95 @@
     align-items: center;
     font-size: 0.9em;
 }
+
+/* top-seminar-list */
+.top_seminar_list {
+    padding:4vh 10px;
+}
+
+.top_seminar_list .seminar_type_list {
+    width:96%;
+    margin:0 auto;
+    background:#fff;
+}
+
+.top_seminar_list .seminar_type_list h5{
+    font-size: 1em;
+    color:#fff;
+    background:red;
+    text-align: center;
+}
+
+.top_seminar_list .seminar_type_list p{
+    text-align: center;
+}
+
+/* top_about_course */
+.top_about_course {
+    background:#fff;
+    padding:5vh 20px;
+}
+
+.top_about_course .course-types {
+    margin:0 auto 4vh;
+    width:96%;
+    position:relative;
+    padding:20px;
+    box-shadow: 1px 1px 3px rgba(50,50,50,0.44);
+    border:2px solid rgb(255,255,255);
+}
+
+.top_about_course .course-types h3 {
+    position:absolute;
+    top:3%;
+    left:-1%;
+    transform: rotate(-13deg);
+    color:#fff;
+    padding:2px 5px;
+    box-shadow: 1px 1px 3px rgba(50,50,50,0.44);
+    background:linear-gradient(90deg, rgba(219,103,8,1) 0%, rgba(255,255,255,0.6) 100%);
+}
+
+.top_about_course .course-types .types {
+    margin:2vh auto;
+}
+.top_about_course .course-types .types ul {
+    list-style-type:none;
+    padding:0;
+}
+
+.top_about_course .course-types .desc {
+    font-size: 0.9em;
+    padding:10px 0;
+}
+
+.top_about_course .course-types .types ul li {
+    display: inline-block;
+    padding:3px 12px;
+    background:linear-gradient(180deg, rgba(210,210,210,1) 0%, rgba(93,93,93,0.6) 100%);
+    margin-right: 3px;
+    color:#fff;
+    font-size: 0.8em;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(50,50,50,0.44);
+}
+
+
+
+.top_about_course .recommended_to .recommend_list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.top_about_course .recommended_to .recommend_list .item {
+    background:#fff;
+    width:31%;
+    text-align: center;
+    font-size: 0.8em;
+    border:1px solid #9a9a9a;
+    border-radius: 5px;
+}
+
 
 @media screen and (max-width:576px) {
     .main-contents-area {
@@ -87,6 +188,18 @@
     }
 
     .seminar-block .seminar_list .seminar_information {
+        padding:10px;
+    }
+
+    .page-text-area .text-area {
+        font-size: 0.9em;
+    }
+
+    .course_type {
+        height:auto;
+        padding:10px;
+    }
+    .course_information {
         padding:10px;
     }
 }

@@ -1,32 +1,25 @@
 <?php
   $page = get_post(get_page_by_path('home'));
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head> -->
-
-<div class="main-contents-area">
-  <?php if (have_rows('main_contents')) : ?>
-   
-    <?php while (have_rows('main_contents')) : the_row(); ?>
-
-      <?php if (get_row_layout() == 'page_top_image') : ?>
-        <div>
-          <pre><?php get_sub_field('image_banner');?></pre>
-        </div>
-      <?php endif; ?>
+<head>
 
 
-    <?php endwhile; ?>
-
-  <?php endif; ?>
-</div>
 
 <?php
   get_header();
-  echo $page -> post_content;
+  // echo $page -> post_content;
 ?>
 
+<!-- 2023.4.5 追加 -->
+<!-- HOMEのIDを入力（521になっています） -->
+<?php $the_query = new WP_Query(array("post_type"=>"page","p"=>521));
+  while($the_query->have_posts()):$the_query->the_post();
+?>
+<?php get_template_part('template-parts/contents'); ?>
+<?php endwhile; wp_reset_postdata();?>
+<!-- 2023.3.31 追加 -->
 
 
 </div>
@@ -35,5 +28,5 @@
   get_footer();
 ?>
 
-<!-- </body>
-</html> -->
+</body>
+</html>

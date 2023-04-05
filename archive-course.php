@@ -37,64 +37,7 @@
 <?php $the_query = new WP_Query(array("post_type"=>"page","p"=>8));
   while($the_query->have_posts()):$the_query->the_post();
 ?>
-<div class="main-contents-area container px-0">
-  <?php if (have_rows('main_contents')) : ?>
-    <?php while (have_rows('main_contents')) : the_row(); ?>
-      <?php if (get_row_layout() == 'page_top_image') : ?>
-        <div class="image-banner" style="aspect-ratio: 16/9; background: url(<?php echo get_sub_field('image_banner');?>) no-repeat; background-size:cover; background-position:center;">
-        </div>
-      <?php endif; ?>
-      <?php if (get_row_layout() == 'page_text_area') : ?>
-        <div class="page-text-area">
-        <h2 class="text-center mb-0" style="color: <?php echo get_sub_field('section_header_color');?>; background:<?php echo get_sub_field('section_header_background_color');?> "><?php echo get_sub_field('section_header');?></h2>
-        <div class="text-area" style="background:#fff; background:linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url(<?php echo get_sub_field('text_area_background')?>) no-repeat; background-position:center; background-size:cover;  ">
-          <?php echo get_sub_field('text_area');?>
-        </div>
-        </div>
-      <?php endif; ?>
-      <?php if (get_row_layout() == 'seminar-block') : ?>
-        <div class="seminar-block" style="background:#fff;">
-        
-        <?php if( have_rows('seminar_list') ): ?>
-    
-            <?php while( have_rows('seminar_list') ): the_row(); ?>
-                <div class="row seminar_list">
-                  <div class="col-lg-4 col-md-4 col-sm-4 seminar_type" style="background:<?php echo get_sub_field('background_color') ?>;">
-                  <?php echo get_sub_field('seminar_type') ?>
-                  </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 seminar_information" style="border: 2px solid <?php echo get_sub_field('background_color') ?>;">
-                  <?php echo get_sub_field('seminar_information') ?>
-                  <!--  -->
-                  </div>
-                </div>
-            <?php endwhile; ?>
-            
-        <?php endif; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (get_row_layout() == 'course-block') : ?>
-        <div class="course-block" style="background:#fff;">
-        
-        <?php if( have_rows('course_list') ): ?>
-    
-            <?php while( have_rows('course_list') ): the_row(); ?>
-                <div class="row course_list">
-                  <div class="col-lg-3 col-md-3 col-sm-4 course_type" style="background:<?php echo get_sub_field('background_color') ?>;">
-                  <?php echo get_sub_field('course_type') ?>
-                  </div>
-                  <div class="col-lg-9 col-md-9 col-sm-8 course_information" style="border: 2px solid <?php echo get_sub_field('background_color') ?>;">
-                  <?php echo get_sub_field('course_information') ?>
-                  <!--  -->
-                  </div>
-                </div>
-            <?php endwhile; ?>
-            
-        <?php endif; ?>
-        </div>
-      <?php endif; ?>
-    <?php endwhile; ?>
-  <?php endif; ?>
-</div>
+<?php get_template_part('template-parts/contents'); ?>
 <?php endwhile; wp_reset_postdata();?>
 <!-- 2023.3.31 追加 -->
 
@@ -204,23 +147,25 @@
             <dd>
               <div class="row p-0">
                 <div class="column table-header">種類</div>
-                <div class="column table-header">サロン</div>
-                <div class="column table-header">スタイリスト</div>
-                <div class="column table-header">講座ID</div>
+                <div class="column table-header">所属</div>
+                <div class="column table-header">講師</div>
+                <div class="column table-header">コース番号</div>
                 <div class="column table-header">プレビュー</div>
               </div>
               <?php endif; ?>
               <div class="row">
+                
                 <div class="column type"><?php echo get_field('course_kinds', $post->ID); ?></div>
+                
                 <div class="column">
-                  <span class="hide"><strong>スタイリスト：</strong></span><?php echo get_field('course_salon', $post->ID); ?> <span class="hide"><?php echo get_field('course_stylist', $post->ID); ?></span>
+                  <span class="hide"><strong>講師：</strong></span><?php echo get_field('course_salon', $post->ID); ?> <span class="hide"><?php echo get_field('course_stylist', $post->ID); ?></span>
                 </div>
                 <div class="column hide-on-phone"><?php echo get_field('course_stylist', $post->ID); ?></div>
-                <div class="column"><span class="hide"><strong>講座ID： </strong></span><?php echo get_field('course_id', $post->ID); ?></div>
-                <div class="column">
+                <div class="column"><span class="hide"><strong>コース番号： </strong></span><?php echo get_field('course_id', $post->ID); ?></div>
+                <div class="column video-button">
                   <button type="button" class="btn btn-primary video-btn" data-bs-toggle="modal"
                     data-src="<?php echo get_field('course_sample_url', $post->ID); ?>" data-url="<?php echo get_field('course_mov_url', $post->ID); ?>" data-bs-target="#stylistModal">
-                    動画を視聴する
+                    <i class="fa-solid fa-video"></i>
                   </button>
                 </div>
 <?php /*
