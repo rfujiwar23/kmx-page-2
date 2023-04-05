@@ -84,7 +84,7 @@
             <?php if (get_row_layout() == 'top_about_course') : ?>
                 <div class="top_about_course">
                     <?php while (have_rows('types_of_courses')) : the_row(); ?>
-                        <div class="course-types" style="background:<?php echo get_sub_field('bg_color') ?>">
+                        <div class="course-types" style="background:linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.6)),url(<?php echo get_sub_field('bg_color') ?>) no-repeat; background-position:center; background-size:cover">
                         <h3><?php echo get_sub_field('course_name') ?></h3>
                         <div class="row">
                             
@@ -110,7 +110,7 @@
                             <?php endif; ?>
                             </div>
                             <div class="recommended_to">
-                                <p class="text-center">こういう方々にお勧め！</p>
+                                <p class="text-center"><strong>こういう方々にお勧め！</strong></p>
                             <div class="recommend_list">
                             <?php while (have_rows('recommended_to')) : the_row(); ?>
                                 

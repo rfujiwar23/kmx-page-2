@@ -115,7 +115,7 @@
     position:relative;
     padding:20px;
     box-shadow: 1px 1px 3px rgba(50,50,50,0.44);
-    border:2px solid rgb(255,255,255);
+    /* border:2px solid rgb(255,255,255); */
 }
 
 .top_about_course .course-types h3 {
@@ -139,7 +139,7 @@
 
 .top_about_course .course-types .desc {
     font-size: 0.9em;
-    padding:10px 0;
+    padding:10px;
 }
 
 .top_about_course .course-types .types ul li {
