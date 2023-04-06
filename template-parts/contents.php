@@ -1,3 +1,20 @@
+<div class="top_banner_content px-0">
+    <?php if (have_rows('top_banner_content')) : ?>
+        <?php while (have_rows('top_banner_content')) : the_row(); ?>
+            <?php if (get_row_layout() == 'page_top_image') : ?>
+                <div class="image-banner" style="aspect-ratio: 16/9; background: url(<?php echo get_sub_field('image_banner'); ?>) no-repeat; background-size:cover; background-position:center;">
+                    <h2><span><?php echo get_the_title(); ?></span></h2>
+                </div>
+            <?php endif; ?>
+            <?php if (get_row_layout() == 'page_top_video') : ?>
+                <div class="bg-video-wrap">
+                    <video src="<?php echo get_sub_field('video_banner'); ?>" loop muted autoplay playsinline poster></video>
+                </div>  
+            <?php endif; ?>
+        <?php endwhile; ?>    
+    <?php endif; ?>
+</div>
+
 <div class="main-contents-area container px-0">
     <?php if (have_rows('main_contents')) : ?>
         <?php while (have_rows('main_contents')) : the_row(); ?>
@@ -5,6 +22,11 @@
                 <div class="image-banner" style="aspect-ratio: 16/9; background: url(<?php echo get_sub_field('image_banner'); ?>) no-repeat; background-size:cover; background-position:center;">
                     <h2><span><?php echo get_the_title(); ?></span></h2>
                 </div>
+            <?php endif; ?>
+            <?php if (get_row_layout() == 'page_top_video') : ?>
+                <div class="bg-video-wrap">
+                    <video src="<?php echo get_sub_field('video_banner'); ?>" loop muted autoplay playsinline poster></video>
+                </div>  
             <?php endif; ?>
             <?php if (get_row_layout() == 'page_text_area') : ?>
                 <div class="page-text-area" style="padding:<?php echo get_sub_field('blank_space_above'); ?>px 0 0; background:#fff;">
@@ -88,12 +110,12 @@
                         <h3><?php echo get_sub_field('course_name') ?></h3>
                         <div class="row">
                             
-                            <div class="col-lg-5 col-md-4 col-sm-4">
+                            <div class="col-lg-5 col-md-4">
                             <div style="aspect-ratio: 16/9; background:url(<?php echo get_sub_field('img') ?>) no-repeat; background-position:center; background-size:cover;">
                             
                             </div>
                             </div>
-                            <div class="col-lg-7 col-md-8 col-sm-8">
+                            <div class="col-lg-7 col-md-8">
                              
                              <div class="desc">
                              <?php echo get_sub_field('description') ?>

@@ -126,7 +126,7 @@
     color:#fff;
     padding:2px 5px;
     box-shadow: 1px 1px 3px rgba(50,50,50,0.44);
-    background:linear-gradient(90deg, rgba(219,103,8,1) 0%, rgba(255,255,255,0.6) 100%);
+    background:linear-gradient(90deg, rgba(219,103,8,1) 0%, rgba(229, 236, 17, 0.6) 100%);
 }
 
 .top_about_course .course-types .types {
@@ -139,7 +139,7 @@
 
 .top_about_course .course-types .desc {
     font-size: 0.9em;
-    padding:10px;
+    padding:10px 0;
 }
 
 .top_about_course .course-types .types ul li {
@@ -151,6 +151,9 @@
     font-size: 0.8em;
     border-radius: 3px;
     box-shadow: 1px 1px 3px rgba(50,50,50,0.44);
+    width:23%;
+    text-align: center;
+    margin-bottom:10px;
 }
 
 
@@ -169,12 +172,42 @@
     border-radius: 5px;
 }
 
+/* top_banner_content */
+.top_banner_content {
+    margin-top:105px! important;
+}
+.bg-video-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
 
-@media screen and (max-width:576px) {
+.bg-video-wrap video {
+    width:100% !important;
+    height:100% !important;
+}
+
+
+/*  */
+
+.course-table ul.nav > li#basic {
+    background:rgb(148, 36, 36);
+}
+
+.course-table ul.nav > li#standard {
+    background:rgb(236, 204, 25);
+}
+
+.course-table ul.nav > li#highlevel {
+    background:rgb(115, 0, 255);
+}
+
+/* @media screen and (max-width:576px) {
     .main-contents-area {
         margin-top: 80px;
     }
-}
+} */
 
 @media screen and (max-width:576px) {
     .seminar-block .seminar_list {
@@ -202,11 +235,25 @@
     .course_information {
         padding:10px;
     }
+
+    .top_about_course .course-types .types ul li {
+        width:31%;
+    }
+
+    .top_about_course .recommended_to .recommend_list {
+        display: block;
+        justify-content: normal;
+    }
+
+    .top_about_course .recommended_to .recommend_list .item {
+        width:60%;
+        margin:5px auto;
+    }
 }
 
 @media screen and (max-width:500px) {
-    .main-contents-area {
-        margin-top: 100px;
+    .top_about_course .course-types .types ul li {
+        width:48%;
     }
 }
 

@@ -33,6 +33,7 @@ a.video-list-data:hover {
   width: 100%;
   max-width: 180px;
   text-align: center;
+  z-index: 999;
 }
 .log-in-button a {
   text-decoration: none;
@@ -685,13 +686,14 @@ footer {
   margin-bottom: 5px;
 }
 .list_table > dt {
-  background-color: #6a7687;;
+  /* background: linear-gradient(180deg, rgba(45,45,57,1) 0%, rgba(14,41,140,0.6) 100%);background-color: #6a7687;; */
   color: #fff;
   width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
   /* border: 1px solid #0e355c; */
+  background:rgb(197 176 134);
 }
 .list_table > dd {
   background-color: #fff;
@@ -717,6 +719,8 @@ footer {
 /* 2023.4.3追加 */
 .list_table > dd > .row .column .btn {
   font-size: 0.9em;
+  background: #2f2f31;
+  color: #fff;
 }
 /* 2023.4.3追加 */
 
@@ -725,7 +729,7 @@ footer {
   font-weight: bold;
 }
 .list_table > dd > .row .table-header {
-  background: #252e37;
+  background: #7c7c7f;
   color: #fff;
 }
 .list_table > dd > ul {
@@ -763,7 +767,7 @@ footer {
   padding: 0;
 }
 .course-table ul.nav {
-  margin: 2vh auto;
+  margin: 2vh auto 0;
   width: 100%;
   height: 60px;
   padding: 0;
@@ -773,10 +777,10 @@ footer {
 .course-table ul.nav > li {
   float: left;
   width: 33%;
-  height: 60px;
+  height: 40px;
   background-color: white;
   text-align: center;
-  line-height: 60px;
+  line-height: 40px;
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 1px 1px 3px rgba(50,50,50,0.5);
@@ -794,7 +798,7 @@ footer {
 }
 .course-table ul.snav {
   display: none;
-  margin: 2vh auto;
+  margin: 0 auto 2vh;
   width: 100%;
   padding: 0;
   display: flex;
@@ -830,7 +834,7 @@ footer {
   background-color: #b3b3b3;
 }
 .course-table ul.snav > li.on {
-  background-color: #4a4a4d;
+  background-color: #7c7c7f;
   color: #fff;
 }
 
@@ -991,7 +995,7 @@ footer {
 
   .course-table ul.snav {
     display: none;
-    margin: 0 auto;
+    margin: 0 auto 2vh;
     width: 100%;
     padding: 0;
     display: flex;

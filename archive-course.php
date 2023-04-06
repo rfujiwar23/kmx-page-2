@@ -146,7 +146,7 @@
             <dt><?php echo $hairstyle->name; ?></dt>
             <dd>
               <div class="row p-0">
-                <div class="column table-header">種類</div>
+                <div class="column table-header">テーマ</div>
                 <div class="column table-header">所属</div>
                 <div class="column table-header">講師</div>
                 <div class="column table-header">コース番号</div>
@@ -163,7 +163,7 @@
                 <div class="column hide-on-phone"><?php echo get_field('course_stylist', $post->ID); ?></div>
                 <div class="column"><span class="hide"><strong>コース番号： </strong></span><?php echo get_field('course_id', $post->ID); ?></div>
                 <div class="column video-button">
-                  <button type="button" class="btn btn-primary video-btn" data-bs-toggle="modal"
+                  <button type="button" class="btn video-btn" data-bs-toggle="modal"
                     data-src="<?php echo get_field('course_sample_url', $post->ID); ?>" data-url="<?php echo get_field('course_mov_url', $post->ID); ?>" data-bs-target="#stylistModal">
                     <i class="fa-solid fa-video"></i>
                   </button>
